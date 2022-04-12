@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <title>Instagram</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <script src="js/user.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/template.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body onload="render()">
+  <nav>
+    <div class="nav-content">
+      <img class="favicon" src="img/favicon.png" alt="" />
+      <img class="logo" src="img/logo.png" alt="" />
+      <div class="search">
+        <img src="img/icons/magnifying-glass-light.svg" alt="" />
+        <input type="text" placeholder="Suchen" id="search" onkeydown="filterPosts()"/>
+      </div>
+      <div class="menu">
+        <a href="#"><img class="icon" src="img/icons/house-user-light.svg" alt="" /></a>
+        <a href="#"><img class="icon" src="img/icons/paper-plane-top-light.svg" alt="" /></a>
+        <a onclick="showOverlay()"><img class="icon" src="img/icons/square-plus-light.svg" alt="" /></a>
+        <a href="#"><img class="icon" src="img/icons/compass-light.svg" alt="" /></a>
+        <a href="#"><img class="icon" src="img/icons/heart-crack-light.svg" alt="" /></a>
+        <a href="#" class="my-profile"><img src="img/me/jimmy.jpg" alt="" /></a>
+      </div>
+    </div>
+  </nav>
+  <div class="content-container">
+    <div class="left-contentbox">
+      <div class="stories-container">
+        <div class="stories" id="stories">
+        <!-- *Stories werden hier geladen -->
+        </div>
+        <div>
+          <img class="scroll-right" onclick="leftScroll()" src="img/icons/circle-arrow-right-solid.svg" alt="">
+          <img class="scroll-left d-none" id="scroll-right" onclick="rightScroll()" src="img/icons/circle-arrow-left-solid.svg" alt="">
+        </div>
+      </div>
+      <div class="posts" id="posts">
+        <!-- *Posts werden hier geladen -->
+      </div>
+    </div>
+    <div>
+      <div class="right-contentbox">
+        <div class="me-section">
+          <img src="img/me/jimmy.jpg" alt="" />
+          <h5 class="profile-name">Jimmy</h5>
+          <button class="button-sm">Wechseln</button>
+        </div>
+        <div class="suggestions-header">
+          <h3>Vorschläge für dich</h3>
+          <button>Alle ansehen</button>
+        </div>
+        <div class="suggestions" id="suggestions">
+          <!-- *Vorschläge werden hier geladen -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay d-none" id="overlay">
+    <img onclick="closeOverlay()" class="close-overlay" src="img/icons/xmark-light.svg" alt="" />
+    <div class="upload-img-section">
+      <h4>Neuen Beitrag erstellen</h4>
+      <div class="upload-img" id="upload-img">
+        <!-- *Vorschläge werden hier geladen -->
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
